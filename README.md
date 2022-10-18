@@ -9,12 +9,12 @@ Copy file `lib/resty/signEd25519.lua` to the `resty` folder under `lualib`, e.g.
 Use in your code like this:
 
 ```lua
-local signEd25519 = require("resty.signEd25519").signEd25519
+local eddsa = require("resty.eddsa")
 
 -- private key in base64
 local keyInBase64 = "123456789+abcdefghijklmnopqrstuvwxyz+123450="
 
-signEd25519(keyInBase64, "message to sign")
+eddsa.signEd25519(keyInBase64, "message to sign")
 ```
 
 **NB!** The key should be in RAW format, so e.g. if you have a PEM file (you can generate one using command `openssl genpkey -algorithm ed25519 -outform PEM -out private_key.pem`), you would need to do something like this:
@@ -28,13 +28,13 @@ $ openssl pkey -in private_key.pem -noout -text | sed 1,2d | tr -d '\n\r :' | xx
 Install from NPM:
 
 ```bash
-npm i resty.signEd25519
+npm i resty.eddsa
 ```
 
 Then use from TS like this:
 
 ```ts
-import {signEd25519} from "resty.signEd25519"
+import {signEd25519} from "resty.eddsa"
 
 signEd25519(privateKeyInBase64, "message to sign");
 ```

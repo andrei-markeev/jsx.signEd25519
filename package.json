@@ -1,9 +1,9 @@
 {
-    "name": "resty.signEd25519",
-    "version": "1.0.0",
-    "description": "Signing with Ed25519 algorithm in Openresty",
-    "types": "./signEd25519",
-    "main": "./lib/resty/signEd25519",
+    "name": "resty.eddsa",
+    "version": "0.0.1",
+    "description": "EdDSA in Openresty",
+    "types": "./eddsa",
+    "main": "./lib/resty/eddsa",
     "keywords": [
         "edDSA",
         "ed25519",
